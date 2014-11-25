@@ -4,7 +4,7 @@ int comment1=0,comment2=0;
 %}
 %%
 "//".* {comment1++;}
-"/*".*[\n]*.*[\n]*.*[\n]*.*"*/" {comment2++;}
+"/*"([\n]|[^*/])*"*/" {comment2++;}
 .   fprintf(yyout,yytext);
 %%
 main(int argc,char *argv[])
