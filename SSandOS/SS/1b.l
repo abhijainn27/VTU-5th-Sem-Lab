@@ -4,7 +4,7 @@ int comment1=0,comment2=0;
 %}
 %%
 "//".* {comment1++;}
-"/*".*[\n]*.*[\n]*.*[\n]*.*[\n]*.*"*/" {comment2++;}
+"/*".*[\n]*.*[\n]*.*[\n]*.*"*/" {comment2++;}
 .   fprintf(yyout,yytext);
 %%
 main(int argc,char *argv[])
@@ -15,3 +15,4 @@ yylex();
 printf("no.of comment lines1(//)=%d\n",comment1);
 printf("no.of comment lines2(/*)=%d\n",comment2);
 }
+
